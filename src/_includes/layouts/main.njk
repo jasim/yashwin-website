@@ -1,0 +1,14 @@
+---
+title: Protoship
+layout: layouts/base.njk
+---
+
+{% set site_header_title = 'Yashwin Shetty' %}
+
+<body class="bg-white font-main">
+<div class="max-w-screen-lg mx-auto px-2 md:px-6">
+  {% include "site_header.njk" %}
+</div>
+{{ content | safe }}
+{% include "site_footer.njk" %}
+</body>

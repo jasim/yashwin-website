@@ -1,0 +1,13 @@
+{% for post in collections.blogposts %}
+<a
+  class="block p-4 hover:bg-slate-200 m-0 border border-dashed border-slate-600"
+  href="{{ post.url | url }}">
+  <h3 class="font-bold m-0 p-0">
+    {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
+  </h3>
+  <time class="block text-slate-600 mb-2" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+  <p class="text-gray-800">
+    {{ post.data.excerpt | truncate(322) }}
+  </p>
+</a>
+{% endfor %}

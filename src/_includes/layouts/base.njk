@@ -1,0 +1,52 @@
+---
+title: Protoship
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function () {
+            window.scrollTo(0, offset - 120)
+          }), 0)
+        }
+      }
+    })
+  </script>
+  <link href="/blog/rss.xml" rel="alternate" title="Yashwin Shetty Blog RSS Feed" type="application/rss+xml">
+  <title>{{ title }}</title>
+  <link href="/static/font.css" rel="stylesheet" type="text/css">
+  <link href="/static/output.css" rel="stylesheet" type="text/css">
+  <meta
+    content="Yashwin Shetty is a sports scientist and strength & conditioning coach based out of Bangalore, India"
+    name="description">
+  <meta content="Yashwin Shetty" property="og:title">
+  <meta
+    content="Yashwin Shetty is a sports scientist and strength & conditioning coach based out of Bangalore, India"
+    property="og:description">
+  <meta content="website" property="og:type">
+  <meta content="summary" name="twitter:card">
+  <meta content="Protoship" name="twitter:creator">
+  <meta content="Protoship Codegen" name="twitter:title">
+  <meta
+    content="Yashwin Shetty is a sports scientist and strength & conditioning coach based out of Bangalore, India"
+    name="twitter:description">
+  <meta content="yashwin, sports, strength" name="keywords">
+</head>
+
+{{ content | safe }}
+
+</html>

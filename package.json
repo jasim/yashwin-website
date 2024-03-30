@@ -1,0 +1,26 @@
+{
+  "name": "yashwin-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "css": "npx tailwindcss -i ./src/input.css -o ./src/static/output.css --watch",
+    "start": "npx @11ty/eleventy --input ./src --serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "1.0.1",
+    "@fec/eleventy-plugin-remark": "3.0.0",
+    "luxon": "2.3.1",
+    "markdown-it": "12.3.2",
+    "markdown-it-anchor": "8.4.1",
+    "markdown-it-footnote": "3.0.3",
+    "prettier": "^3.2.5",
+    "rehype-raw": "6.1.1",
+    "rehype-stringify": "9.0.3",
+    "remark-rehype": "10.1.0",
+    "tailwindcss": "3.0.23"
+  }
+}

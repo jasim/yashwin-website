@@ -1,0 +1,53 @@
+---
+layout: layouts/main.njk
+templateClass: tmpl-post
+---
+
+<main class="pt-4 pb-8 px-6 max-w-screen-lg mx-auto leading-normal">
+  <div class="max-w-screen-sm lg:max-w-screen-md">
+    {% if draft %}
+    <p class="inline-block text-yellow-800 rounded">DRAFT</p>
+    {% endif %}
+    <div class="mb-12">
+      <div class="PS-blogHeader mt-6 mb-8">
+        <h1
+          class="text-2xl md:text-3xl font-bold mb-2"
+          style="line-height: 1.2"
+        >
+          {{ title }}
+        </h1>
+        <div class="mb-4">
+          <a class="text-slate-800 text-lg font-semibold" href="https://twitter.com/jasim_ab">
+            {{ author | findAuthor }}
+          </a>
+          <p class="text-sm text-slate-600">
+            <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+          </p>
+        </div>
+      </div>
+      <div class="text-base PS-blogArticle">
+        {{ content | safe }}
+      </div>
+    </div>
+    {%- if collections.blogposts %}
+    {%- set nextPost = collections.blogposts | getNextCollectionItem(page) %}
+    {%- set previousPost = collections.blogposts | getPreviousCollectionItem(page) %}
+    {%- if nextPost or previousPost %}
+    <hr class="mb-4">
+    <ul class="pb-8">
+      {%- if nextPost %}
+      <li class="mb-4">
+        <span class="text-gray-700">Next post:</span>
+        <a class="block ml-4 hover:bg-slate-300 p-1" href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></li>
+      {% endif %}
+      {%- if previousPost %}
+      <li>
+        <span class="text-gray-700 link">Previous post:</span>
+        <a class="block ml-4 hover:bg-slate-300 p-1" href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></li>
+      {% endif %}
+    </ul>
+    {%- endif %}
+    {%- endif %}
+  </div>
+</main>
+

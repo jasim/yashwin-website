@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Anchor tag in Markdown headings */
+.direct-link {
+  @apply text-lg;
+}
+
+/* DECODE video */
+/* https://flaviocopes.com/responsive-youtube-videos/ */
+.video-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.video-container::after {
+  padding-top: 56.25%;
+  display: block;
+  content: "";
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.stylistic-quote-mark {
+  font-size: 5rem;
+  right: 100%;
+  @apply mr-2 hidden text-neutral-500 font-serif absolute top-0 leading-none;
+}
+
+@screen sm {
+  .stylistic-quote-mark {
+    @apply block;
+  }
+}
+
+/* Blog BODY */
+
+div.PS-blogArticle {
+  line-height: 1.5;
+}
+
+.PS-blogArticle p,
+.PS-blogArticle video {
+  @apply mb-4;
+}
+
+.PS-blogArticle .footnotes {
+  @apply pt-8;
+}
+
+.PS-blogArticle .footnotes:before {
+  content: "Footnotes";
+  color: #7a7a7a;
+}
+
+.PS-blogArticle ol {
+  @apply list-decimal list-outside pt-2 pl-2 mb-4;
+}
+
+.PS-blogArticle ul {
+  @apply list-disc list-outside pt-2 pl-2 mb-4;
+}
+
+.PS-blogArticle .footnotes hr {
+  @apply mb-2;
+}
+
+.PS-blogArticle .footnotes li {
+  @apply mb-3;
+}
+
+.PS-blogArticle .footnotes p {
+  @apply mr-1 inline;
+}
+
+.PS-blogArticle blockquote {
+  @apply ml-12 text-slate-800;
+}
+
+.PS-blogArticle h1,
+.PS-blogArticle h2,
+.PS-blogArticle h3 {
+  @apply text-black mt-8 mb-3;
+}
+
+.PS-blogArticle h1 {
+  @apply text-2xl;
+}
+
+@screen md {
+  .PS-blogArticle h1 {
+    @apply text-3xl;
+  }
+}
+
+.PS-blogArticle h2 {
+  @apply text-2xl font-bold;
+}
+
+.PS-blogArticle h3 {
+  @apply text-xl font-medium text-teal-800;
+}
+
+@media only screen and (max-width: 767px) {
+  .PS-blogArticle pre[data-tag="prism"] {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .PS-blogArticle pre[data-tag="prism"] {
+    /* So the code snippet has more space */
+    margin-left: -120px;
+  }
+}
+
+.PS-blogArticle pre[data-tag="prism"] {
+  margin-bottom: 20px;
+}
+
+.PS-blogArticle pre[data-tag="prism"][data-language="reason"]:before {
+  content: "[Reason]";
+  font-size: 0.5rem;
+  margin-bottom: -1rem;
+  padding: 0;
+  line-height: 1;
+  color: #7a7a7a;
+}
+
+.PS-blogArticle pre[data-tag="prism"][data-language="js"]:before {
+  content: "[Javascript]";
+  font-size: 0.5rem;
+  margin-bottom: -1rem;
+  padding: 0;
+  line-height: 1;
+  color: #7a7a7a;
+}
+
+.PS-blogArticle a {
+  @apply text-orange-800;
+}
+
+.PS-blogArticle a:hover {
+  @apply bg-slate-400;
+}
+
+.PS-blogArticle div > div.gatsby-resp-iframe-wrapper + p {
+  margin-bottom: 60px;
+}
+
+.PS-blogArticle ol {
+  margin-bottom: 32px;
+}
+
+.PS-blogArticle ol > li {
+  margin-bottom: 8px;
+}
+
+.PS-blogArticle hr {
+  margin: 3rem 0;
+}
+
+/* Home Page */
+.PS-home-bg {
+  background: linear-gradient(
+    to right bottom,
+    rgb(245, 245, 245),
+    rgb(240, 240, 240)
+  );
+}
