@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "css": "npx tailwindcss -i ./src/input.css -o ./src/static/output.css --watch",
-    "start": "npx @11ty/eleventy --input ./src --serve"
+    "start": "npx @11ty/eleventy --input ./src --serve",
+    "build": "npx @11ty/eleventy --input ./src"
   },
   "keywords": [],
   "author": "",
