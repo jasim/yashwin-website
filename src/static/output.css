@@ -776,7 +776,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 /* Set base size for all remaining rem values */
 
 html {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 /* Anchor tag in Markdown headings */
