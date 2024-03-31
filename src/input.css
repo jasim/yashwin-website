@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Set base size for all remaining rem values */
+html {
+  font-size: 16px;
+}
+
 /* Anchor tag in Markdown headings */
 .direct-link {
   @apply text-lg;
